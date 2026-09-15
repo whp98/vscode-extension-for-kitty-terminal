@@ -1,0 +1,80 @@
+{
+  "name": "vscode-kitty-terminal",
+  "displayName": "Open in Kitty Terminal",
+  "description": "Open an independent Kitty terminal window at current file or directory in VS Code",
+  "version": "0.1.0",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [],
+  "contributes": {
+    "commands": [
+      {
+        "command": "kitty.openTerminal",
+        "title": "Open in Kitty",
+        "category": "Terminal"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "kitty.openTerminal",
+        "key": "ctrl+alt+k",
+        "mac": "cmd+alt+k"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "kitty.openTerminal",
+          "group": "navigation@100"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "kitty.openTerminal",
+          "group": "navigation@100"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "kitty.openTerminal",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Kitty Terminal",
+      "properties": {
+        "kitty.executablePath": {
+          "type": "string",
+          "default": "",
+          "description": "Custom path to the Kitty executable. If empty, the system PATH will be used."
+        },
+        "kitty.arguments": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "Additional command line arguments to pass when launching Kitty."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "node --test out/test/**/*.test.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.3.3"
+  }
+}
