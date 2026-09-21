@@ -3,7 +3,7 @@
   "displayName": "Open in Kitty Terminal",
   "description": "Open an independent Kitty terminal window at current file or directory in VS Code",
   "version": "0.1.0",
-  "publisher": "local",
+  "publisher": "whp98-software",
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -23,8 +23,8 @@
     "keybindings": [
       {
         "command": "kitty.openTerminal",
-        "key": "ctrl+alt+k",
-        "mac": "cmd+alt+k"
+        "key": "",
+        "mac": ""
       }
     ],
     "menus": {
